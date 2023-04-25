@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="1820ae535e3c44bbbe955e980df11240" Name="Diagram1">
+        <EntityTypeShape EntityType="JSanchezProgramacionNCapasModel.Usuario" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="JSanchezProgramacionNCapasModel.Rol" Width="1.5" PointX="0.75" PointY="5.875" />
+        <AssociationConnector Association="JSanchezProgramacionNCapasModel.FK__Usuario__IdRol__2E1BDC42" />
+        <EntityTypeShape EntityType="JSanchezProgramacionNCapasModel.Colonia" Width="1.5" PointX="10.125" PointY="1.125" />
+        <EntityTypeShape EntityType="JSanchezProgramacionNCapasModel.Direccion" Width="1.5" PointX="12.375" PointY="1.5" />
+        <EntityTypeShape EntityType="JSanchezProgramacionNCapasModel.Estado" Width="1.5" PointX="5.625" PointY="1.25" />
+        <EntityTypeShape EntityType="JSanchezProgramacionNCapasModel.Municipio" Width="1.5" PointX="7.875" PointY="1.25" />
+        <EntityTypeShape EntityType="JSanchezProgramacionNCapasModel.Pai" Width="1.5" PointX="3.375" PointY="1.375" />
+        <EntityTypeShape EntityType="JSanchezProgramacionNCapasModel.Producto" Width="1.5" PointX="3.375" PointY="4.75" />
+        <AssociationConnector Association="JSanchezProgramacionNCapasModel.FK__Colonia__IdMunic__38996AB5" />
+        <AssociationConnector Association="JSanchezProgramacionNCapasModel.FK__Direccion__IdCol__3B75D760" />
+        <AssociationConnector Association="JSanchezProgramacionNCapasModel.FK__Direccion__IdUsu__3C69FB99" />
+        <AssociationConnector Association="JSanchezProgramacionNCapasModel.FK__Estado__IdPais__32E0915F" />
+        <AssociationConnector Association="JSanchezProgramacionNCapasModel.FK__Municipio__IdEst__35BCFE0A" />
+        <EntityTypeShape EntityType="JSanchezProgramacionNCapasModel.Area" Width="1.5" PointX="1.125" PointY="15.625" />
+        <EntityTypeShape EntityType="JSanchezProgramacionNCapasModel.Departamento" Width="1.5" PointX="1.125" PointY="12.375" />
+        <EntityTypeShape EntityType="JSanchezProgramacionNCapasModel.Proveedor" Width="1.5" PointX="1.125" PointY="9.875" />
+        <AssociationConnector Association="JSanchezProgramacionNCapasModel.FK__Departame__IdAre__4316F928" />
+        <AssociationConnector Association="JSanchezProgramacionNCapasModel.FK__Producto__IdDepa__46E78A0C" />
+        <AssociationConnector Association="JSanchezProgramacionNCapasModel.FK__Producto__IdProv__45F365D3" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

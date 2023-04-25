@@ -1,0 +1,159 @@
+﻿
+@{
+    ViewBag.Title = "GetAll";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>
+<script src="~/Scripts/ProductoCRUD/Producto.js"></script>
+
+<style type="text/css">
+    html,
+    body,
+    .intro {
+        height: 100%;
+    }
+
+    table td,
+    table th {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
+    thead th {
+        color: #fff;
+    }
+
+    .card {
+        border-radius: .5rem;
+    }
+
+    .table-scroll {
+        border-radius: .5rem;
+    }
+
+        .table-scroll table thead th {
+            font-size: 1.25rem;
+        }
+
+    thead {
+        top: 0;
+        position: sticky;
+    }
+</style>
+
+
+<h2>GetAll</h2>
+<p>Productos:</p>
+
+@*<table id="producto" class="table-responsive table-bordered">
+        <tr>
+            <td>Id</td>
+            <td>Nombre</td>
+            <td>Descripcion</td>
+            <td>Precio Unitario</td>
+            <td>Stock</td>
+            <td>Proveedor</td>
+            <td>Departamento</td>
+        </tr>
+        <tbody>
+
+        </tbody>
+    </table>*@
+
+<div>
+    <button class="btn btn-success" onclick="showForm()">Agregar</button>
+</div>
+
+<section class="intro">
+    <div class="bg-image h-100" style="background-color: #f5f7fa;">
+        <div class="mask d-flex align-items-center h-100">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body p-0">
+                                <div class="table-responsive table-scroll" data-mdb-perfect-scrollbar="true" style="position: relative;">
+                                    <table class="table table-striped mb-0" id="producto">
+                                        <thead style="background-color: #1E90FF; ">
+                                            <tr>
+                                                <th scope="col">Actualizar</th>
+                                                <th scope="col">Nombre</th>
+                                                <th scope="col">Descripcion</th>
+                                                <th scope="col">Precio Unitario</th>
+                                                <th scope="col">Stock</th>
+                                                <th scope="col">Proveedor</th>
+                                                <th scope="col">Departamento</th>
+                                                <th scope="col"></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<div class="modal fade" id="ModalUpdate" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">×</button>
+                <h4 class="modal-title" id="myModalLabel">Producto</h4>
+            </div>
+
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <input type="text" required class="form-control" id="txtIdProducto" placeholder="Id Producto" disabled="disabled" />
+                    </div>
+                    <label id="lblId" hidden></label>
+                    <div class="form-group">
+                        <input type="text" required class="form-control" id="txtNombre" maxlength="100" onkeypress="return LetrasNumeros(event,'txtNombre','lblNombre')" placeholder="Nombre" />
+                    </div>
+                    <label id="lblNombre" hidden></label>
+                    <div class="form-group">
+                        <textarea required class="form-control" id="txtDescripcion" maxlength="200" onkeypress="return LetrasNumeros(event,'txtDescripcion','lblDescripcion')" placeholder="Descripcion"></textarea>
+                    </div>
+                    <label id="lblDescripcion" hidden></label>
+                    <div class="form-group">
+                        <input type="number" required class="form-control" id="txtStock" onkeypress="return SoloNumeros(event,'txtStock','lblStock')" placeholder="Stock" />
+                    </div>
+                    <label id="lblStock" hidden></label>
+                    <div class="form-group">
+                        <input type="number" required class="form-control" id="txtPrecioUnitario" onblur="ValidarMinimo('txtPrecioUnitario','lblPrecio')" onkeypress="return SoloDecimales(event,'txtPrecioUnitario','lblPrecio')" placeholder="$" />
+                    </div>
+                    <label id="lblPrecio" hidden></label>
+                    <div class="form-group">
+                        <input type="number" required class="form-control" id="txtIdProveedor" onblur="ValidarMinimo('txtIdProveedor','lblIdProveedor')" onkeypress="return SoloNumeros(event,'txtIdProveedor','lblIdProveedor')" placeholder="Id Proveedor" />
+                    </div>
+                    <label id="lblIdProveedor" hidden></label>
+                    <div class="form-group">
+                        <input type="number" required class="form-control" id="txtIdDepartamento" onblur="ValidarMinimo('txtIdDepartamento','lblIdDepartamento')" onkeypress="return SoloNumeros(event,'txtIdDepartamento','lblIdDepartamento')" placeholder="Id Departamento" />
+                    </div>
+                    <label id="lblIdDepartamento" hidden></label>
+                </form>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-info glyphicon glyphicon-pencil" id="btnUpdate" hidden onclick="Update()">Actualizar</button>
+                <button type="button" class="btn btn-success glyphicon glyphicon-pencil" id="btnAdd" hidden onclick="Add()">Agregar</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
